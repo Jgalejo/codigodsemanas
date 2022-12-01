@@ -1,0 +1,113 @@
+          ------*UTPL*----
+Programacion funcional y reactiva
+Alumno: Jean Gabriel Alejo
+//Semana 5 
+
+ //Ejercicios mapeo
+  
+  /* Mapear una lista de cadenas de texto a lista de enteros que representan la longtud del texto
+  
+  val names : List[String] = List( "Leo", "Cristiano", "Enner", "Felipe" ) names.map(_.length) 
+  
+  /* Dada una lista de números enteros, desarrollar las unciones necesarias que le permitan contar cuantos 
+  elementos de la lista son números primos.
+  /*
+  
+  val numbers = List (3,4,7,11,12)
+  val isPrime = (nro : Int) => ( 2 to nro -).forall( nro % _ !=0)
+  numbers.map(isPrime(_) match {
+        case true => 1
+		case false => 0
+}).sum		
+  
+// filtrar y truncar secuencias
+
+    val numbers = List(6,28,15,12,11,24)
+	
+    numbers.max
+    res26: Int = 28
+	
+	numbers.min
+	res27: Int = 6
+	
+	numbers.size
+	res28: Int = 6
+	
+	
+
+     
+   //Forall
+       def isPrime(nro : Int ) : Boolean = (2 until nro).orall(nro %_!=0) 
+	   
+  // Exits 
+       de isPrime(nro : Int ) : Boolean = !(2 until nro).exits(nro % _== 0)
+
+
+  // filter 
+       List(1,2,3,4,5 ). filter (k => k % 3 !=0)
+       res: List[Int] = List(1,2,4,5) 
+  	   
+  // takeWhile
+     List(1,2,3,4,5 ).takeWhile ( k=> k % 3 !=0)
+     res: List[Int] = List(1,2)	
+
+
+// Ejercicios transformaciones 
+    //Map y filter	 
+	
+	(n: Int) => (1 until n). filter(div => n % div == 0)
+	
+	val sumDiv = (n : Int) => (1 until n).filter(div => n % div == 9).sum
+	
+	
+	
+	val numbers = List(6,28,15,12,11,24)
+	
+	val sumDiv = (nro : Int) => (1 until nro).filter(div =>nro % div == 0).sum
+
+    numbers.filter(nro => nro == sumDiv(nro)).size
+
+//Ejercicio
+
+
+(n:Int) => (i =< until < n ). ilter (div => n %	div =={
+    //actorial escalonado
+	
+de !!(n: Int ) : Int = {
+    n % 2 match {
+        
+		case 0 => (2=< to =<n by 2).product
+		case _ => (1=< to =<n by 2).product 
+	}
+}
+
+factorialEscalonado(8)
+factorialEscalonado(9)
+
+val numbers = (1=< to <=28).toList
+
+// Contar Pares
+numbers.filter( nro => nro % 2 == 0).size
+numbers.count(nro => nro % 2 == 0
+
+//Contar Impares
+numbers.filter( nro => % 2 == 0).size
+numbers.count(nro => nro % 2 !=0)
+
+//Contar Primos
+de contarPrimos(nros : List[Int]) : Int = {
+  val isPrime = (n : Int) => (2 =< until <n).forall ( n % _!=0)
+  //nros.filter(isPrime).size
+  nros.count(isPrime)
+}
+contarPrimos(numbers)
+
+//Presentar tres factores
+    def tresfactores(nros: List(Int)) : List(Int) = {
+	 val actores = (n: Int) => (2 =< until =<).filter(n % _ ==0)
+	 
+	 nros.filter(nro => factores(nro).size == 1)
+	 }
+	 tresFactores((1=< to =<1000).toList
+	 
+	

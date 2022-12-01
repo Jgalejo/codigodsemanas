@@ -1,0 +1,91 @@
+           -------*UTPL*-------
+Programacion funcional y reactiva
+Alumno: Jean Gabriel Alejo
+//Semana 4
+
+//Valores Inmutables
+val cedula = "1108765321"
+
+cedula = "1108765320"
+
+val cedula = "1108765321"
+
+val cedula = "1108765320"
+
+var cedula = "1108765320"
+
+//Higher Orden Functions
+  //Una función que puede asignarse a un valor
+      // f(x) = x^2 + 8x - 12
+
+val f1= (x:Double) => -Math.pow(x,2) + 8 * x - 12
+f1(12)
+
+
+
+//Higher Orden Functions
+  //Una funcion se envia como parametro
+       
+	   def integracion(a:Int,b:Int, f:Double => Double) {
+		   
+		   val intermedio = ((a+b) / 2.0)
+		   val fa = f(a);
+		   val  fi = f(intermedio)
+		   val fb = f(b)
+		   (b-a) * (fa + 4 * fi + fb) / 6   
+		   
+	   }
+  
+//Higher Orden Functions
+  // Una funcion que devuelve una funcion 
+   //Calculadora para sumar numeros enteros 
+   
+def select(option:Char) : (Int,Int) => Double = {
+  option match {
+    case '+' => (a:Int,b:Int) => a + b
+    case ''' => (a:Int,b:Int) => a - b
+    case '*' => (a:Int,b:Int) => a * b
+    case '/' => (a:Int,b:Int) => a / b
+    case _ => (a:Int,b:Int) => 0/(a+b)
+  }
+}
+select('+')(2,1)
+val operation = select('+')
+operation(2,1)
+
+//Obtener datos de secuencias 
+
+val isEven = (k:Int) => if ( k % 2 == 0) 1 else 0 
+
+def isEven(k:Int) : Int = ( k%2) match {
+	
+ case 0 => 1 
+ case _ => 0 
+	
+	
+List (1,2,3)
+List (1,2,3).sum 
+	
+}
+//map
+
+List(1,2,3).map( x => x * x + 100 * x )
+res1: List[Int] = List(101,204,309)
+
+def func1(x : Int ) : Int = x * x + 00 * x
+
+List(1,2,3).map( func1 )
+res3: List[Int] = List(101,204,309)
+
+List(1,2,3) map func1 //dotless inix
+
+//
+
+de countEven(s : List[Int] ) : Int = {
+	de IsEven(k: Int ) : Int = (k % 2) match{
+		case 0 => 1
+		case_ => 0
+	}
+    s.map( IsEven).sum
+}
+countEven(List(12,14,9,7,5,4,4))	
